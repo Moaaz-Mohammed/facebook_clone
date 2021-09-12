@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: ScreenTypeLayout(
-        mobile: GroupModel(name: 'Group Name', img2: Constants.person4, img1: Constants.person2,),
+        breakpoints: ScreenBreakpoints(desktop: 1001, tablet: 800, watch: 200),
+        mobile: MobileHome(),
         desktop: WebHome(),
       ),
     );

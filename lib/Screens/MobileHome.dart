@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import '../Components/Constants.dart';
 import '../Models/CreateStoryModel.dart';
-import '../Models/PostModel.dart';
+import '../Models/PhonePostModel.dart';
 import '../Models/StoryModel.dart';
 
 class MobileHome extends StatelessWidget {
@@ -12,7 +12,6 @@ class MobileHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
           backgroundColor: Colors.grey[200],

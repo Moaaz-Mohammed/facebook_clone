@@ -4,51 +4,62 @@ import 'package:flutter/material.dart';
 
 class GroupModel extends StatelessWidget {
   const GroupModel(
-      {Key? key, required this.img1, required this.img2, required this.name})
+      {Key? key, required this.img1, required this.img2, required this.groupName})
       : super(key: key);
   final String img1;
   final String img2;
-  final String name;
+  final String groupName;
   @override
   Widget build(BuildContext context) {
+
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: EdgeInsets.all(7),
       child: Row(
         children: [
           Stack(
             children: [
-              Stack(
-                fit: StackFit.passthrough,
-                children: [
-                  CircleAvatar(
-                    backgroundImage: AssetImage(img1),
-                    radius: 15,
-                  ),
-                  CircleAvatar(
-                    backgroundImage: AssetImage(img2),
-                    radius: 15,
-                  ),
-                ],
+              Container(
+                width: width*0.1,
+                child: Stack(
+                  overflow: Overflow.visible,
+                  children: [
+                    Positioned(
+                      top: 0,
+                      left:-20,
+                      child: CircleAvatar(
+                        backgroundImage: AssetImage(img1),
+                        radius: 15,
+                      ),
+                    ),
+                    Positioned(
+                      child: CircleAvatar(
+                        backgroundImage: AssetImage(img2),
+                        radius: 15,
+                      ),
+                    ),
+                  ],
+                ),
               ),
               Positioned(
-                  top: 18,
-                  right: 1,
+                  top: 20,
+                  right: 105,
                   child: CircleAvatar(
                     radius: 5,
                     backgroundColor: Colors.white,
                   )),
               Positioned(
-                  top: 19,
-                  right: 2,
+                  top: 21,
+                  right: 104,
                   child: CircleAvatar(
                     radius: 4,
                     backgroundColor: Colors.green,
                   )),
             ],
           ),
-          SizedBox(width: 15),
           Text(
-            name,
+            groupName,
             style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
           )
         ],

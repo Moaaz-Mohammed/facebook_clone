@@ -98,13 +98,13 @@ class RightSide extends StatelessWidget {
                   fontWeight: FontWeight.w800),
             ),
             title: Container(
-              margin: EdgeInsets.only(left:50),
+              margin: EdgeInsets.only(left:width*0.01),
               child: Row(
                 children: [
                   Icon(Icons.video_call,size:22,color:Colors.grey[700]),
-                  SizedBox(width:15),
+                  SizedBox(width:width*0.002),
                   Icon(Icons.search,size:22,color:Colors.grey[700]),
-                  SizedBox(width:15),
+                  SizedBox(width:width*0.002),
                   Icon(Icons.more_horiz_outlined,size:22,color:Colors.grey[700]),
                 ],
               ),
@@ -125,7 +125,7 @@ class RightSide extends StatelessWidget {
                   fontWeight: FontWeight.w800),
             ),
           ),
-          GroupModel(img2: Constants.person4, img1:Constants.person5 , name: 'Group Name',)
+          GroupModel(img2: Constants.person4, img1:Constants.person5 , groupName: 'Group Name',)
         ],
       ),
     );

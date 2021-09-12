@@ -15,15 +15,19 @@ class SponserModel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Container(
       margin: EdgeInsets.only(bottom: 10,top:10),
+      width: width,
       child:Row(
         children:
         [
           ClipRRect(
             borderRadius:BorderRadius.circular(10),
-              child: Image.asset(CompanyImg,height: 100,)),
-          SizedBox(width: 10,),
+              child: Image.asset(CompanyImg,height: width * 0.05,)),
+          SizedBox(width: width*0.01,),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

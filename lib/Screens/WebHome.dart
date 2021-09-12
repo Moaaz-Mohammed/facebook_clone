@@ -1,13 +1,13 @@
 import 'package:facebook_clone/Models/RoomHolderModel.dart';
 import 'package:facebook_clone/WebHomeWidgets/LeftSide.dart';
 import 'package:facebook_clone/WebHomeWidgets/RightSide.dart';
+import 'package:facebook_clone/WebHomeWidgets/WebPostModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import '../Components/Constants.dart';
 import '../Models/CreateStoryModel.dart';
-import '../Models/PostModel.dart';
 import '../Models/StoryModel.dart';
 
 class WebHome extends StatelessWidget {
@@ -31,7 +31,6 @@ class WebHome extends StatelessWidget {
                     alignment: Alignment.topCenter,
                     child: Container(
                       color: Constants.home_bg_color,
-                      width: width,
                       height: 55,
                       child: Row(
                         children: [
@@ -63,7 +62,9 @@ class WebHome extends StatelessWidget {
                           ),
                           Center(
                             child: Container(
-                                margin: EdgeInsets.only(right: 60, left: 60),
+                                margin: EdgeInsets.only(
+                                    right: width * 0.05, left: width * 0.05
+                                ),
                                 width: width * 0.5,
                                 child: DefaultTabController(
                                   initialIndex: 0,
@@ -92,41 +93,42 @@ class WebHome extends StatelessWidget {
                             children:
                             [
                               CircleAvatar(
-                                backgroundImage: AssetImage(Constants.girlImg),
+                                radius: width * 0.012,
+                                backgroundImage: AssetImage(Constants.girlImg,),
                               ),
-                              SizedBox(width:5),
-                              Text('Moaaz',style: TextStyle(fontSize:16,fontWeight: FontWeight.bold),),
-                              SizedBox(width:10),
+                              SizedBox(width:width * 0.002),
+                              Text('Moaaz',style: TextStyle(fontSize:width*0.012,fontWeight: FontWeight.bold),),
+                              SizedBox(width:width * 0.002),
                               CircleAvatar(
                                   backgroundColor: Colors.grey[300],
-                                  radius: width*0.0125,
+                                  radius: width*0.012,
                                   child: const Icon(
                                     Icons.apps_rounded,
                                     color: Colors.black,
                                     size: 25,
                                   )),
-                              SizedBox(width:5),
+                              SizedBox(width:width*0.001),
                               CircleAvatar(
                                   backgroundColor: Colors.grey[300],
-                                  radius: 18,
+                                  radius: width * 0.012,
                                   child: Image.asset(
                                     Constants.messengerlogo,
                                     color: Colors.black,
-                                    width: width*0.015,
+                                    width: width * 0.015,
                                   )),
-                              SizedBox(width:5),
+                              SizedBox(width:width*0.001),
                               CircleAvatar(
                                   backgroundColor: Colors.grey[300],
-                                  radius: 18,
+                                  radius: width * 0.012,
                                   child: const Icon(
                                     Icons.notifications,
                                     color: Colors.black,
                                     size: 20,
                                   )),
-                              SizedBox(width:5),
+                              SizedBox(width:width*0.001),
                               CircleAvatar(
                                   backgroundColor: Colors.grey[300],
-                                  radius: 18,
+                                  radius: width * 0.012,
                                   child: const Icon(
                                     Icons.arrow_drop_down_sharp,
                                     color: Colors.black,
@@ -332,62 +334,66 @@ class WebHome extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              SingleChildScrollView(
-                                child: Container(
-                                  margin: EdgeInsets.only(top:10,bottom: 10),
-                                  width: width * 0.5,
-                                  padding: const EdgeInsets.only(
-                                      top: 20, bottom: 10, right: 10, left: 10),
-                                  decoration:BoxDecoration(
-                                    color: Constants.home_bg_color,
-                                    borderRadius:BorderRadius.circular(20),
-                                  ),
-                                  child: Stack(
-                                    children:[
-                                      Row(
-                                        children: [
-                                          InkWell(
-                                            onTap: (){},
-                                            child: Container(
-                                              padding: EdgeInsets.only(left:15,right:15,top:5,bottom:5),
-                                              decoration: BoxDecoration(
-                                                border:Border.all(
-                                                  color:Colors.blue,
+                              Container(
+                                margin: EdgeInsets.only(top:10,bottom: 10),
+                                width: width * 0.5,
+                                padding: const EdgeInsets.only(
+                                    top: 20, bottom: 10, right: 10, left: 10),
+                                decoration:BoxDecoration(
+                                  color: Constants.home_bg_color,
+                                  borderRadius:BorderRadius.circular(20),
+                                ),
+                                child: Stack(
+                                  children:[
+                                    Container(
+                                      width:width * 0.5,
+                                      child: SingleChildScrollView(
+                                        scrollDirection:Axis.horizontal,
+                                        child: Row(
+                                          children: [
+                                            InkWell(
+                                              onTap: (){},
+                                              child: Container(
+                                                padding: EdgeInsets.only(left:width*0.005,right:width*0.005,top:width*0.001,bottom:width*0.001),
+                                                decoration: BoxDecoration(
+                                                  border:Border.all(
+                                                    color:Colors.blue,
+                                                  ),
+                                                  borderRadius: BorderRadius.circular(20),
                                                 ),
-                                                borderRadius: BorderRadius.circular(20),
+                                                child: Row(children: [
+                                                  Icon(Icons.video_call,color: Colors.purple,),
+                                                  SizedBox(width:5),
+                                                  Text('Create Room',style: TextStyle(fontSize:16,fontWeight:FontWeight.bold,color:Colors.purple),),
+                                                ],),
                                               ),
-                                              child: Row(children: [
-                                                Icon(Icons.video_call,color: Colors.purple,),
-                                                SizedBox(width:5),
-                                                Text('Create Room',style: TextStyle(fontSize:16,fontWeight:FontWeight.bold,color:Colors.purple),),
-                                              ],),
                                             ),
-                                          ),
-                                          SizedBox(width:10),
-                                          RoomHolderModel(img: Constants.person1,),
-                                          RoomHolderModel(img: Constants.person2,),
-                                          RoomHolderModel(img: Constants.person3,),
-                                          RoomHolderModel(img: Constants.person5,),
-                                          RoomHolderModel(img: Constants.person5,),
-                                          RoomHolderModel(img: Constants.girlImg,),
-                                          RoomHolderModel(img: Constants.person5,),
-                                          RoomHolderModel(img: Constants.person2,),
-                                        ],
+                                            SizedBox(width:width*0.005),
+                                            RoomHolderModel(img: Constants.person1,),
+                                            RoomHolderModel(img: Constants.person2,),
+                                            RoomHolderModel(img: Constants.person3,),
+                                            RoomHolderModel(img: Constants.person5,),
+                                            RoomHolderModel(img: Constants.person5,),
+                                            RoomHolderModel(img: Constants.girlImg,),
+                                            RoomHolderModel(img: Constants.person5,),
+                                            RoomHolderModel(img: Constants.person2,),
+                                          ],
+                                        ),
                                       ),
-                                      Align(
-                                          alignment: Alignment.centerRight,
-                                          child: CircleAvatar(
-                                            radius: 20,
-                                            backgroundColor: Colors.white,
-                                            child: Icon(Icons.arrow_forward_ios,
-                                                color: Colors.black),
-                                          ))
-                                    ]
-                                  ),
+                                    ),
+                                    Align(
+                                        alignment: Alignment.centerRight,
+                                        child: CircleAvatar(
+                                          radius: 20,
+                                          backgroundColor: Colors.white,
+                                          child: Icon(Icons.arrow_forward_ios,
+                                              color: Colors.black),
+                                        ))
+                                  ]
                                 ),
                               ),
                               //Posts
-                              PostModel(
+                              WebPostModel(
                                   name: 'Dwayne Johnson',
                                   profileImg: Constants.person2,
                                   time: '2 days',
@@ -399,7 +405,7 @@ class WebHome extends StatelessWidget {
                                     Image.asset(Constants.fast2),
                                     Image.asset(Constants.fast3),
                                   ]),
-                              PostModel(
+                              WebPostModel(
                                   name: 'Mohamed Salah',
                                   profileImg: Constants.person5,
                                   time: '2 min',
@@ -411,7 +417,7 @@ class WebHome extends StatelessWidget {
                                       Constants.car7,
                                     ),
                                   ]),
-                              PostModel(
+                              WebPostModel(
                                 name: 'Bill Gates',
                                 profileImg: Constants.person4,
                                 time: '5 min',
@@ -419,7 +425,7 @@ class WebHome extends StatelessWidget {
                                 icon: Icons.public,
                                 imgs: [Image.asset(Constants.car6)],
                               ),
-                              PostModel(
+                              WebPostModel(
                                 name: 'Mike Jordan',
                                 profileImg: Constants.person3,
                                 time: '2 hours',
@@ -428,7 +434,7 @@ class WebHome extends StatelessWidget {
                                 icon: Icons.public,
                                 imgs: [],
                               ),
-                              PostModel(
+                              WebPostModel(
                                   name: 'Elizabeth Olsen',
                                   profileImg: Constants.person1,
                                   time: '2 Days',

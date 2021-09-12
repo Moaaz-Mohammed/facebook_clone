@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../Components/Constants.dart';
 
-class PostModel extends StatelessWidget {
-  PostModel({
+class WebPostModel extends StatelessWidget {
+  WebPostModel({
     Key? key,
     required this.name,
     required this.profileImg,
