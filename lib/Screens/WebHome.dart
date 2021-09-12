@@ -1,6 +1,6 @@
 import 'package:facebook_clone/Models/RoomHolderModel.dart';
-import 'package:facebook_clone/Models/WebHomeWidgets/LeftSide.dart';
-import 'package:facebook_clone/Models/WebHomeWidgets/RightSide.dart';
+import 'package:facebook_clone/WebHomeWidgets/LeftSide.dart';
+import 'package:facebook_clone/WebHomeWidgets/RightSide.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';

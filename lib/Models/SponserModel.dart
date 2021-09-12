@@ -16,15 +16,19 @@ class SponserModel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(bottom: 10,top:10),
       child:Row(
         children:
         [
-          Image.asset(CompanyImg,height: 80,),
-          SizedBox(width: 5,),
+          ClipRRect(
+            borderRadius:BorderRadius.circular(10),
+              child: Image.asset(CompanyImg,height: 100,)),
+          SizedBox(width: 10,),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(CompanyName,style: TextStyle(fontSize:16,color:Colors.grey[800]),),
+              SizedBox(height:5),
               Text(CompanyWebsite,style: TextStyle(fontSize:13,color:Colors.grey[600]),),
             ],
           )
