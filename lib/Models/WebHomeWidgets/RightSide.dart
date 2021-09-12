@@ -17,7 +17,7 @@ class RightSide extends StatelessWidget {
       height: height,
       child: ListView(
         children: [
-          SponserModel(CompanyWebsite: 'facebook.com', CompanyName: 'Facebook', CompanyImg: Constants.facebooklogo,),
+          SponserModel(CompanyWebsite: 'jumia.com.eg', CompanyName: 'Jumia', CompanyImg: Constants.JumiaProd,),
           Divider(),
           ListTile(leading: Text('Your shortcuts',style: TextStyle(fontSize:16,color:Colors.grey[600],fontWeight:FontWeight.w800),)),
           ListTile(

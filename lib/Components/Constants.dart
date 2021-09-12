@@ -15,6 +15,8 @@ class Constants {
   static const String  marketIcon =  'images/market.png';
   static const String  groupIcon =  'images/group.png';
   static const String  pagesIcon =  'images/pages.png';
+  static const String  JumiaProd =  'images/jumia.jpg';
+  static const String  btechProd =  'images/b.tech.jpg';
 
   // Fast and Furious
   static const String  fast =  'images/fast.jpg';

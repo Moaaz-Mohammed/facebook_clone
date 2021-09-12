@@ -19,8 +19,10 @@ class SponserModel extends StatelessWidget {
       child:Row(
         children:
         [
-          Image.asset(CompanyImg),
+          Image.asset(CompanyImg,height: 80,),
+          SizedBox(width: 5,),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(CompanyName,style: TextStyle(fontSize:16,color:Colors.grey[800]),),
               Text(CompanyWebsite,style: TextStyle(fontSize:13,color:Colors.grey[600]),),
