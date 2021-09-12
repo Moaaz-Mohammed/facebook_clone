@@ -1,7 +1,10 @@
+import 'package:facebook_clone/Models/ContactModel.dart';
 import 'package:facebook_clone/Screens/MobileHome.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
+import 'Components/Constants.dart';
+import 'Models/GroupModel.dart';
 import 'Screens/WebHome.dart';
 
 void main() {
@@ -20,7 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: ScreenTypeLayout(
-        mobile: MobileHome(),
+        mobile: GroupModel(name: 'Group Name', img2: Constants.person4, img1: Constants.person2,),
         desktop: WebHome(),
       ),
     );

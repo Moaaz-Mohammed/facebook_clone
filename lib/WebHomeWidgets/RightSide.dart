@@ -1,5 +1,6 @@
 import 'package:facebook_clone/Components/Constants.dart';
 import 'package:facebook_clone/Models/ContactModel.dart';
+import 'package:facebook_clone/Models/GroupModel.dart';
 import 'package:facebook_clone/Models/SponserModel.dart';
 import 'package:flutter/material.dart';
 
@@ -109,7 +110,22 @@ class RightSide extends StatelessWidget {
               ),
             ),
           ),
-          ContactModel(name:'Dwayn Johnson',img: Constants.person2,)
+          ContactModel(name:'Dwayn Johnson',img: Constants.person2,),
+          ContactModel(name:'Bill Gates',img: Constants.person4,),
+          ContactModel(name:'Elizabeth Johns',img: Constants.person1,),
+          ContactModel(name:'Mike Jordan',img: Constants.person3,),
+          ContactModel(name:'Mohamed Salah',img: Constants.person5,),
+          Divider(),
+          ListTile(
+            leading: Text(
+              'Group conversations',
+              style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey[600],
+                  fontWeight: FontWeight.w800),
+            ),
+          ),
+          GroupModel(img2: Constants.person4, img1:Constants.person5 , name: 'Group Name',)
         ],
       ),
     );
