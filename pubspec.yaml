@@ -23,8 +23,8 @@ dependencies:
   responsive_builder: ^0.4.1
 
   # BloC State Management
-  bloc: ^7.1.0
-  bloc_flutter:
+  bloc:
+  flutter_bloc: 7.0.1
 
 
 dev_dependencies:

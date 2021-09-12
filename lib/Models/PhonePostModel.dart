@@ -105,60 +105,54 @@ class PostModel extends StatelessWidget {
               height: 10,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 InkWell(
                   onTap: () {},
-                  child: Expanded(
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          Constants.likeIcon,
-                          width: 20,
-                        ),
-                        SizedBox(width: 5),
-                        Text(
-                          'Like',
-                          style: TextStyle(fontSize: 14),
-                        )
-                      ],
-                    ),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        Constants.likeIcon,
+                        width: 20,
+                      ),
+                      SizedBox(width: 5),
+                      Text(
+                        'Like',
+                        style: TextStyle(fontSize: 14),
+                      )
+                    ],
                   ),
                 ),
                 InkWell(
                   onTap: () {},
-                  child: Expanded(
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          Constants.commentIcon,
-                          width: 25,
-                        ),
-                        SizedBox(width: 5),
-                        Text(
-                          'Comment',
-                          style: TextStyle(fontSize: 14),
-                        )
-                      ],
-                    ),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        Constants.commentIcon,
+                        width: 25,
+                      ),
+                      SizedBox(width: 5),
+                      Text(
+                        'Comment',
+                        style: TextStyle(fontSize: 14),
+                      )
+                    ],
                   ),
                 ),
                 InkWell(
                   onTap: () {},
-                  child: Expanded(
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          Constants.shareIcon,
-                          width: 25,
-                        ),
-                        SizedBox(width: 5),
-                        Text(
-                          'Share',
-                          style: TextStyle(fontSize: 14),
-                        )
-                      ],
-                    ),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        Constants.shareIcon,
+                        width: 25,
+                      ),
+                      SizedBox(width: 5),
+                      Text(
+                        'Share',
+                        style: TextStyle(fontSize: 14),
+                      )
+                    ],
                   ),
                 ),
               ],

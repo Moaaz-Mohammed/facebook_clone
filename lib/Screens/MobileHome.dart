@@ -13,7 +13,7 @@ class MobileHome extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return SafeArea(
-      child: Scaffold(
+      child: Scaffold (
           backgroundColor: Colors.grey[200],
           appBar: AppBar(
             elevation: 0,
