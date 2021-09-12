@@ -13,9 +13,21 @@ class SponserModel extends StatelessWidget {
   final String CompanyName;
   final String CompanyWebsite;
 
-
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child:Row(
+        children:
+        [
+          Image.asset(CompanyImg),
+          Column(
+            children: [
+              Text(CompanyName,style: TextStyle(fontSize:16,color:Colors.grey[800]),),
+              Text(CompanyWebsite,style: TextStyle(fontSize:13,color:Colors.grey[600]),),
+            ],
+          )
+        ]
+      )
+    );
   }
 }
