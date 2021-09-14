@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'States.dart';
@@ -18,7 +19,14 @@ class AppCubit extends Cubit<AppStates> {
   bool isLoaded = false;
 
   void LoadingPosts(){
-    isLoaded = !isLoaded;
+    if(isLoaded=false)
+    Future.delayed(Duration(seconds: 2)).then((value){
+      Center(child: CircularProgressIndicator());
+    });
+    else
+      {
+        Center(child: CircularProgressIndicator());
+      }
     emit(LoadingPostsState());
   }
 }

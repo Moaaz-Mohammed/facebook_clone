@@ -24,7 +24,6 @@ class MyApp extends StatelessWidget {
     builder: (context, state) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        themeMode: ThemeMode.system,
         home: ScreenTypeLayout(
           breakpoints: ScreenBreakpoints(
               desktop: 1001, tablet: 800, watch: 200),
