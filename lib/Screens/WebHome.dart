@@ -337,11 +337,7 @@ class WebHome extends StatelessWidget {
                                                         onTap: () {},
                                                         child: Row(
                                                           children: [
-                                                            const Icon(
-                                                              Icons.video_call,
-                                                              color: Colors.red,
-                                                              size: 30,
-                                                            ),
+                                                            Image.asset(Constants.liveIcon,height:20),
                                                             const SizedBox(
                                                                 width: 5),
                                                             const Text(
