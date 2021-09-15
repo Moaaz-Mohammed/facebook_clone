@@ -38,14 +38,14 @@ class CreateStoryModel extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 child: Container(
                   color: Colors.white,
-                  height: 60,
+                  height: 80,
                   width: width,
                   child: Center(child: Text('Create Story')),
                 ),
               ),
               Positioned(
-                bottom: 45,
-                left: 38,
+                bottom: 60,
+                left: 30,
                 child: CircleAvatar(
                   radius: 23,
                   backgroundColor: Colors.white,

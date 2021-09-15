@@ -19,6 +19,7 @@ class MobileHome extends StatelessWidget {
   @override
   BlocProvider<AppCubit> build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
 
     return BlocProvider(
         create: (context) => AppCubit()..LoadingPosts(),
@@ -263,7 +264,9 @@ class MobileHome extends StatelessWidget {
                           ),
                           //Posts
                           AppCubit.get(context).isLoaded
-                              ? Center(child: CircularProgressIndicator())
+                              ? Column(children: [
+                                SizedBox(height:height * 0.2),
+                                CircularProgressIndicator()])
                               : Column(
                                   children: [
                                     PostModel(

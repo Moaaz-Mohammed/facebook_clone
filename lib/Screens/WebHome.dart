@@ -165,7 +165,6 @@ class WebHome extends StatelessWidget {
                             // Left Side
                             LeftSide(),
                             // Center
-
                             AppCubit.get(context).isLoaded
                                 ? Center(child: Container(
                                 width:width * 0.6,

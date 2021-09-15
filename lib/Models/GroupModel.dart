@@ -15,7 +15,7 @@ class GroupModel extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Container(
-      margin: EdgeInsets.all(7),
+      margin:EdgeInsets.only(left:20),
       child: Row(
         children: [
           Stack(
