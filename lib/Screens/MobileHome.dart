@@ -298,7 +298,7 @@ class MobileHome extends StatelessWidget {
                                               Image.asset(Constants.fast),
                                               Image.asset(Constants.fast2),
                                               Image.asset(Constants.fast3),
-                                            ]),
+                                            ], commentsNum: '5',),
                                         PostModel(
                                             name: 'Mohamed Salah',
                                             profileImg: Constants.person5,
@@ -310,7 +310,7 @@ class MobileHome extends StatelessWidget {
                                               Image.asset(
                                                 Constants.car7,
                                               ),
-                                            ]),
+                                            ], commentsNum: '15',),
                                         PostModel(
                                           name: 'Bill Gates',
                                           profileImg: Constants.person4,
@@ -318,7 +318,7 @@ class MobileHome extends StatelessWidget {
                                           text:
                                               'Your life is a movie.So act like superman!',
                                           icon: Icons.public,
-                                          imgs: [Image.asset(Constants.car6)],
+                                          imgs: [Image.asset(Constants.car6)], commentsNum: '',
                                         ),
                                         PostModel(
                                           name: 'Mike Jordan',
@@ -327,7 +327,7 @@ class MobileHome extends StatelessWidget {
                                           text:
                                               'It\'s a big dream! but you can do it 😉❤',
                                           icon: Icons.public,
-                                          imgs: [],
+                                          imgs: [], commentsNum: '60',
                                         ),
                                         PostModel(
                                             name: 'Elizabeth Olsen',
@@ -335,7 +335,7 @@ class MobileHome extends StatelessWidget {
                                             time: '2 Days',
                                             text: 'It\'s a great day to work!',
                                             icon: Icons.public,
-                                            imgs: []),
+                                            imgs: [], commentsNum: '5814',),
                                       ],
                                     )
                             ],

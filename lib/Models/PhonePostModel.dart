@@ -12,6 +12,7 @@ class PostModel extends StatelessWidget {
     required this.text,
     required this.icon,
     required this.imgs,
+    required this.commentsNum,
   }) : super(key: key);
 
   final String name;
@@ -20,6 +21,7 @@ class PostModel extends StatelessWidget {
   final String text;
   final IconData icon;
   final List<Widget> imgs;
+  final String commentsNum;
 
   @override
   Widget build(BuildContext context) {
@@ -104,6 +106,23 @@ class PostModel extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
+            // Reacts and Number of Comments
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                  Image.asset(Constants.laughtReact,width: 25,),
+                  Image.asset(Constants.likeReact,width: 35,),
+                  Image.asset(Constants.loveReact,width: 25,),
+                ],),
+                Row(children: [
+                  Text('$commentsNum comments',style: TextStyle(fontSize:15,color:Colors.grey[800]),),
+                ],)
+              ],),
+            SizedBox(height:5),
+            Divider(),
+            SizedBox(height:5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
