@@ -113,7 +113,9 @@ class WebPostModel extends StatelessWidget {
                 Text('$commentsNum comments',style: TextStyle(fontSize:16,color:Colors.grey),),
               ],)
             ],),
-
+            SizedBox(height:5),
+            Divider(),
+            SizedBox(height:5),
             // React on the post
             Row(
               mainAxisAlignment:MainAxisAlignment.spaceAround,
