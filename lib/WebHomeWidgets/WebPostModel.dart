@@ -12,12 +12,14 @@ class WebPostModel extends StatelessWidget {
     required this.text,
     required this.icon,
     required this.imgs,
+    required this.commentsNum,
   }) : super(key: key);
 
   final String name;
   final String profileImg;
   final String time;
   final String text;
+  final String commentsNum;
   final IconData icon;
   final List<Widget> imgs;
 
@@ -97,13 +99,22 @@ class WebPostModel extends StatelessWidget {
                       )
                     : Text(''),
             SizedBox(height:10),
-            Row(children: [
+
+            // Reacts and Number of Comments
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
               Row(children: [
                 Image.asset(Constants.laughtReact,width: 25,),
-                Image.asset(Constants.likeReact,width: 25,),
+                Image.asset(Constants.likeReact,width: 35,),
                 Image.asset(Constants.loveReact,width: 25,),
+              ],),
+              Row(children: [
+                Text('$commentsNum comments',style: TextStyle(fontSize:16,color:Colors.grey),),
               ],)
             ],),
+
+            // React on the post
             Row(
               mainAxisAlignment:MainAxisAlignment.spaceAround,
               children: [

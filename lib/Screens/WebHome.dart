@@ -494,7 +494,7 @@ class WebHome extends StatelessWidget {
                                               Image.asset(Constants.fast),
                                               Image.asset(Constants.fast2),
                                               Image.asset(Constants.fast3),
-                                            ]),
+                                            ], commentsNum: '5',),
                                         WebPostModel(
                                             name: 'Mohamed Salah',
                                             profileImg: Constants.person5,
@@ -506,7 +506,7 @@ class WebHome extends StatelessWidget {
                                               Image.asset(
                                                 Constants.car7,
                                               ),
-                                            ]),
+                                            ], commentsNum: '10',),
                                         WebPostModel(
                                           name: 'Bill Gates',
                                           profileImg: Constants.person4,
@@ -514,7 +514,7 @@ class WebHome extends StatelessWidget {
                                           text:
                                               'Your life is a movie.So act like superman!',
                                           icon: Icons.public,
-                                          imgs: [Image.asset(Constants.car6)],
+                                          imgs: [Image.asset(Constants.car6)], commentsNum: '50',
                                         ),
                                         WebPostModel(
                                           name: 'Mike Jordan',
@@ -523,7 +523,7 @@ class WebHome extends StatelessWidget {
                                           text:
                                               'It\'s a big dream! but you can do it 😉❤',
                                           icon: Icons.public,
-                                          imgs: [],
+                                          imgs: [], commentsNum: '85415',
                                         ),
                                         WebPostModel(
                                             name: 'Elizabeth Olsen',
@@ -531,7 +531,7 @@ class WebHome extends StatelessWidget {
                                             time: '2 Days',
                                             text: 'It\'s a great day to work!',
                                             icon: Icons.public,
-                                            imgs: []),
+                                            imgs: [], commentsNum: '51',),
                                       ],
                                     )
                                   ],
