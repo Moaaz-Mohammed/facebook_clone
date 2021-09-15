@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: ScreenTypeLayout(
           breakpoints: ScreenBreakpoints(
-              desktop: 1001, tablet: 800, watch: 200),
+              desktop: 1001, tablet: 801, watch: 200),
           mobile: MobileHome(),
           desktop: WebHome(),
         ),
