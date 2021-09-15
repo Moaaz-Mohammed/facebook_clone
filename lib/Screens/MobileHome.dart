@@ -1,5 +1,9 @@
+import 'dart:async';
+import 'dart:io';
+
 import 'package:facebook_clone/Components/Cubit/Cubit.dart';
 import 'package:facebook_clone/Components/Cubit/States.dart';
+import 'package:facebook_clone/Screens/WebHome.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -11,11 +15,10 @@ import '../Models/StoryModel.dart';
 
 class MobileHome extends StatelessWidget {
   const MobileHome({Key? key}) : super(key: key);
-  
+
   @override
-  Widget build(BuildContext context) {
+  BlocProvider<AppCubit> build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
 
     return BlocProvider(
         create: (context) => AppCubit()..LoadingPosts(),
@@ -259,16 +262,16 @@ class MobileHome extends StatelessWidget {
                             ),
                           ),
                           //Posts
-                          state != LoadingPostsState ?
-                            CircularProgressIndicator():
-                                Column(
+                          AppCubit.get(context).isLoaded
+                              ? Center(child: CircularProgressIndicator())
+                              : Column(
                                   children: [
                                     PostModel(
                                         name: 'Dwayne Johnson',
                                         profileImg: Constants.person2,
                                         time: '2 days',
                                         text:
-                                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et arcu at sapien auctor vehicula ut non massa. Fusce blandit tortor non nisl mollis imperdiet. Vestibulum vel turpis in orci maximus condimentum. Ut nec viverra magna, sit amet iaculis erat. Aenean tellus eros, pulvinar ac nisi et, tincidunt luctus diam. Aliquam tristique risus at dui ultricies, eu sodales felis aliquet. Donec dolor risus, semper vitae erat id, dictum malesuada neque.',
+                                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et arcu at sapien auctor vehicula ut non massa. Fusce blandit tortor non nisl mollis imperdiet. Vestibulum vel turpis in orci maximus condimentum. Ut nec viverra magna, sit amet iaculis erat. Aenean tellus eros, pulvinar ac nisi et, tincidunt luctus diam. Aliquam tristique risus at dui ultricies, eu sodales felis aliquet. Donec dolor risus, semper vitae erat id, dictum malesuada neque.',
                                         icon: Icons.group,
                                         imgs: [
                                           Image.asset(Constants.fast),
@@ -280,7 +283,7 @@ class MobileHome extends StatelessWidget {
                                         profileImg: Constants.person5,
                                         time: '2 min',
                                         text:
-                                        'Going to Real Madrid? It\'s a dream to any player. In this time I just focus with my team 😊',
+                                            'Going to Real Madrid? It\'s a dream to any player. In this time I just focus with my team 😊',
                                         icon: Icons.public,
                                         imgs: [
                                           Image.asset(
@@ -292,7 +295,7 @@ class MobileHome extends StatelessWidget {
                                       profileImg: Constants.person4,
                                       time: '5 min',
                                       text:
-                                      'Your life is a movie.So act like superman!',
+                                          'Your life is a movie.So act like superman!',
                                       icon: Icons.public,
                                       imgs: [Image.asset(Constants.car6)],
                                     ),
@@ -301,7 +304,7 @@ class MobileHome extends StatelessWidget {
                                       profileImg: Constants.person3,
                                       time: '2 hours',
                                       text:
-                                      'It\'s a big dream! but you can do it 😉❤',
+                                          'It\'s a big dream! but you can do it 😉❤',
                                       icon: Icons.public,
                                       imgs: [],
                                     ),

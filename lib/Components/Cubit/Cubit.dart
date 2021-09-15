@@ -11,16 +11,14 @@ class AppCubit extends Cubit<AppStates> {
 
   bool isLoaded = true;
 
+
   void LoadingPosts() {
-
-      isLoaded =! isLoaded;
-
-    emit(LoadingPostsState());
-  }
-
-  void PostsLoaded() {
-    isLoaded = isLoaded;
-
-    emit(PostsLoadedState());
+    Future.delayed(Duration(seconds: 2),(){
+      if(isLoaded = false)
+        {
+          emit(LoadingPostsState());
+        }
+      emit(PostsLoadedState());
+    });
   }
 }
