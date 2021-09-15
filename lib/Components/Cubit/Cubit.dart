@@ -1,7 +1,7 @@
+import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'States.dart';
 
 class AppCubit extends Cubit<AppStates> {
@@ -9,24 +9,18 @@ class AppCubit extends Cubit<AppStates> {
 
   static AppCubit get(context) => BlocProvider.of(context);
 
-  //bool isDark = false;
+  bool isLoaded = true;
 
-  // void changeAppMode() {
-  //   isDark = !isDark;
-  //   emit(AppChangeModeState());
-  // }
+  void LoadingPosts() {
 
-  bool isLoaded = false;
+      isLoaded =! isLoaded;
 
-  void LoadingPosts(){
-    if(isLoaded=false)
-    Future.delayed(Duration(seconds: 2)).then((value){
-      Center(child: CircularProgressIndicator());
-    });
-    else
-      {
-        Center(child: CircularProgressIndicator());
-      }
     emit(LoadingPostsState());
+  }
+
+  void PostsLoaded() {
+    isLoaded = isLoaded;
+
+    emit(PostsLoadedState());
   }
 }
