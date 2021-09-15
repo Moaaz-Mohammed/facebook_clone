@@ -78,6 +78,8 @@ class WebPostModel extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
+
+            // عشان لما يكون فيه صورة واحده بس تكون عبارة عن صورة مش Carousel و لما يكون مفيش خالص يكتب الـ Text بس و يكون فيه امكانيه انه يضيف اكتر من صورة في البوست الواحد على شكل Carousel
             imgs.length == 1
                 ? Column(
                     children: imgs,
@@ -94,11 +96,10 @@ class WebPostModel extends StatelessWidget {
                         ),
                       )
                     : Text(''),
-            SizedBox(
-              height: 10,
-            ),
+            SizedBox(height:10),
+
             Row(
-              mainAxisAlignment:MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment:MainAxisAlignment.spaceAround,
               children: [
                 InkWell(
                   onTap: () {},

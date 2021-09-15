@@ -19,6 +19,13 @@ class Constants {
   static const String  btechProd =  'images/b.tech.jpg';
   static const String  liveIcon =  'images/live.png';
 
+  // Reacts
+  static const String  loveReact =  'images/loveReactIcon.png';
+  static const String  laughtReact =  'images/laughtReactIcon.png';
+  static const String  careReact =  'images/careReactIcon.png';
+  static const String  sadReact =  'images/sadReactIcon.png';
+  static const String  wowReact =  'images/wowReactIcon.png';
+
   // Fast and Furious
   static const String  fast =  'images/fast.jpg';
   static const String  fast2 =  'images/fast2.jpg';
