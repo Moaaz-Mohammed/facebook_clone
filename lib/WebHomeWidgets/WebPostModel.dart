@@ -97,7 +97,13 @@ class WebPostModel extends StatelessWidget {
                       )
                     : Text(''),
             SizedBox(height:10),
-
+            Row(children: [
+              Row(children: [
+                Image.asset(Constants.laughtReact,width: 25,),
+                Image.asset(Constants.likeReact,width: 25,),
+                Image.asset(Constants.loveReact,width: 25,),
+              ],)
+            ],),
             Row(
               mainAxisAlignment:MainAxisAlignment.spaceAround,
               children: [
