@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_pro_nullsafety/carousel_pro_nullsafety.dart';
 import 'package:flutter/material.dart';
 import '../Components/Constants.dart';
 
@@ -28,7 +29,7 @@ class WebPostModel extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     final CarouselController _controller = CarouselController();
     return Container(
-        width: width*0.5,
+        width: width * 0.5,
         margin: EdgeInsets.only(top: 10),
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
@@ -86,63 +87,73 @@ class WebPostModel extends StatelessWidget {
                     children: imgs,
                   )
                 : imgs.length > 1
-                    ? CarouselSlider(
-                        items: imgs,
-                        options: CarouselOptions(
-                          height: imgs.length == 0 ? height : 300,
-                          viewportFraction: 0.85,
-                          autoPlayCurve: Curves.fastOutSlowIn,
-                          enlargeCenterPage: true,
-                          scrollDirection: Axis.horizontal,
+                    ? SizedBox(
+                        height: 300,
+                        child: Carousel(
+                          autoplayDuration: Duration(seconds:5),
+                          animationDuration: Duration(seconds:5),
+                          images: imgs,
+                          dotSpacing: 10.0,
+                          dotSize: 4,
+                          dotColor: Colors.grey,
+                          indicatorBgPadding: 10.0,
+                          dotBgColor: Colors.transparent,
+                          borderRadius: true,
                         ),
                       )
                     : Text(''),
-            SizedBox(height:10),
-            imgs.length == 1
-                ? Text('')
-                : imgs.length == 0
-                ? Text('')
-                : Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                TextButton(
-                  onPressed: () => _controller.previousPage(),
-                  child: Icon(Icons.arrow_back_ios,color: Colors.grey[400],),
-                ),
-                TextButton(
-                  onPressed: () => _controller.nextPage(),
-                  child: Icon(Icons.arrow_forward_ios,color: Colors.grey[400],),
-                ),
-              ],
-            ),
+            SizedBox(height: 10),
 
             // Reacts and Number of Comments
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-              Row(children: [
-                Image.asset(Constants.laughtReact,width: 25,),
-                Image.asset(Constants.likeReact,width: 35,),
-                Image.asset(Constants.loveReact,width: 25,),
-              ],),
-              Row(children: [
-                Text('$commentsNum comments',style: TextStyle(fontSize:16,color:Colors.grey),),
-              ],)
-            ],),
-            SizedBox(height:5),
+                Row(
+                  children: [
+                    Image.asset(
+                      Constants.laughtReact,
+                      width: 25,
+                    ),
+                    Image.asset(
+                      Constants.likeReact,
+                      width: 35,
+                    ),
+                    Image.asset(
+                      Constants.loveReact,
+                      width: 25,
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text(
+                      '$commentsNum comments',
+                      style: TextStyle(fontSize: 16, color: Colors.grey),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            SizedBox(height: 5),
             Divider(),
-            SizedBox(height:5),
+            SizedBox(height: 5),
             // React on the post
             Row(
-              mainAxisAlignment:MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 InkWell(
                   onTap: () {},
                   child: Row(
                     children: [
-                      Image.asset(Constants.likeIcon,width : 20,),
-                      SizedBox(width:5),
-                      Text('Like',style: TextStyle(fontSize : 14),)
+                      Image.asset(
+                        Constants.likeIcon,
+                        width: 20,
+                      ),
+                      SizedBox(width: 5),
+                      Text(
+                        'Like',
+                        style: TextStyle(fontSize: 14),
+                      )
                     ],
                   ),
                 ),
@@ -150,9 +161,15 @@ class WebPostModel extends StatelessWidget {
                   onTap: () {},
                   child: Row(
                     children: [
-                      Image.asset(Constants.commentIcon,width: 25,),
-                      SizedBox(width:5),
-                      Text('Comment',style: TextStyle(fontSize:14),)
+                      Image.asset(
+                        Constants.commentIcon,
+                        width: 25,
+                      ),
+                      SizedBox(width: 5),
+                      Text(
+                        'Comment',
+                        style: TextStyle(fontSize: 14),
+                      )
                     ],
                   ),
                 ),
@@ -160,9 +177,15 @@ class WebPostModel extends StatelessWidget {
                   onTap: () {},
                   child: Row(
                     children: [
-                      Image.asset(Constants.shareIcon,width: 25,),
-                      SizedBox(width:5),
-                      Text('Share',style: TextStyle(fontSize:14),)
+                      Image.asset(
+                        Constants.shareIcon,
+                        width: 25,
+                      ),
+                      SizedBox(width: 5),
+                      Text(
+                        'Share',
+                        style: TextStyle(fontSize: 14),
+                      )
                     ],
                   ),
                 ),
