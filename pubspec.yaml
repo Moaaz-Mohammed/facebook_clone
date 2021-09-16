@@ -18,6 +18,8 @@ dependencies:
 
   # Carousel Slider
   carousel_slider: ^4.0.0
+
+  # Supporting web and Null Safety
   carousel_pro_nullsafety:
 
   #Responsive Builder to toggle between Mobile and Web
