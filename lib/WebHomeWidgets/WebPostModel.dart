@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:carousel_pro_nullsafety/carousel_pro_nullsafety.dart';
 import 'package:flutter/material.dart';
 import '../Components/Constants.dart';
@@ -26,8 +25,6 @@ class WebPostModel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-    final CarouselController _controller = CarouselController();
     return Container(
         width: width * 0.5,
         margin: EdgeInsets.only(top: 10),
