@@ -26,6 +26,8 @@ class PostModel extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
+
+
     return Container(
         width: width,
         margin: EdgeInsets.only(top: 10),
@@ -36,9 +38,7 @@ class PostModel extends StatelessWidget {
         child: Column(
           children: [
             // Name - Shared Time
-            Row(
-              mainAxisAlignment:MainAxisAlignment.spaceBetween,
-                children: [
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Row(
                 children: [
                   CircleAvatar(
@@ -51,7 +51,8 @@ class PostModel extends StatelessWidget {
                     children: [
                       Text(
                         name,
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 3),
                       Row(
@@ -87,7 +88,8 @@ class PostModel extends StatelessWidget {
               height: 10,
             ),
             imgs.length == 1
-                ? Column(
+                ? Stack(
+              fit: StackFit.passthrough,
                     children: imgs,
                   )
                 : imgs.length > 1
@@ -101,27 +103,42 @@ class PostModel extends StatelessWidget {
                           scrollDirection: Axis.horizontal,
                         ),
                       )
-                    : Text(''),
-            SizedBox(
-              height: 10,
-            ),
+                    : SizedBox(
+                        height: 1,
+                      ),
             // Reacts and Number of Comments
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
-                  Image.asset(Constants.laughtReact,width: 25,),
-                  Image.asset(Constants.likeReact,width: 35,),
-                  Image.asset(Constants.loveReact,width: 25,),
-                ],),
-                Row(children: [
-                  Text('$commentsNum comments',style: TextStyle(fontSize:15,color:Colors.grey[800]),),
-                ],)
-              ],),
-            SizedBox(height:5),
+                    Image.asset(
+                      Constants.laughtReact,
+                      width: 25,
+                    ),
+                    Image.asset(
+                      Constants.likeReact,
+                      width: 35,
+                    ),
+                    Image.asset(
+                      Constants.loveReact,
+                      width: 25,
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text(
+                      '$commentsNum comments',
+                      style: TextStyle(fontSize: 15, color: Colors.grey[800]),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            SizedBox(height: 5),
             Divider(),
-            SizedBox(height:5),
+            SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

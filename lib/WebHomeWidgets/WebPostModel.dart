@@ -26,6 +26,7 @@ class WebPostModel extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
+    final CarouselController _controller = CarouselController();
     return Container(
         width: width*0.5,
         margin: EdgeInsets.only(top: 10),
@@ -79,7 +80,6 @@ class WebPostModel extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-
             // عشان لما يكون فيه صورة واحده بس تكون عبارة عن صورة مش Carousel و لما يكون مفيش خالص يكتب الـ Text بس و يكون فيه امكانيه انه يضيف اكتر من صورة في البوست الواحد على شكل Carousel
             imgs.length == 1
                 ? Column(
@@ -98,6 +98,23 @@ class WebPostModel extends StatelessWidget {
                       )
                     : Text(''),
             SizedBox(height:10),
+            imgs.length == 1
+                ? Text('')
+                : imgs.length == 0
+                ? Text('')
+                : Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                TextButton(
+                  onPressed: () => _controller.previousPage(),
+                  child: Icon(Icons.arrow_back_ios,color: Colors.grey[400],),
+                ),
+                TextButton(
+                  onPressed: () => _controller.nextPage(),
+                  child: Icon(Icons.arrow_forward_ios,color: Colors.grey[400],),
+                ),
+              ],
+            ),
 
             // Reacts and Number of Comments
             Row(

@@ -44,7 +44,7 @@ class MobileHome extends StatelessWidget {
                               child: const Icon(
                                 Icons.search,
                                 color: Colors.black,
-                                size: 30,
+                                size: 25,
                               )),
                         ),
                         const SizedBox(
@@ -58,7 +58,7 @@ class MobileHome extends StatelessWidget {
                               child: Image.asset(
                                 Constants.messengerlogo,
                                 color: Colors.black,
-                                width: 30,
+                                width: 25,
                               )),
                         ),
                         SizedBox(width: 5),
