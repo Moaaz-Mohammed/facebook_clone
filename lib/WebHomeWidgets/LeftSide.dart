@@ -18,7 +18,7 @@ class LeftSide extends StatelessWidget {
           ListTile(
               leading: CircleAvatar(
                 radius:15,
-                backgroundImage: AssetImage(Constants.girlImg),
+                backgroundImage: AssetImage(Constants.person4),
               ),
               title: Text('Moaaz Mohammed',
                   style: TextStyle(fontSize:15,fontWeight: FontWeight.w600))),

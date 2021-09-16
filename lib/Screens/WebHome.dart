@@ -108,7 +108,7 @@ class WebHome extends StatelessWidget {
                                     CircleAvatar(
                                       radius: width * 0.012,
                                       backgroundImage: AssetImage(
-                                        Constants.girlImg,
+                                        Constants.person4,
                                       ),
                                     ),
                                     SizedBox(width: width * 0.002),
