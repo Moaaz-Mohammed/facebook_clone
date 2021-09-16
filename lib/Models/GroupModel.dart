@@ -1,4 +1,3 @@
-import 'package:facebook_clone/Components/Constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,9 +10,7 @@ class GroupModel extends StatelessWidget {
   final String groupName;
   @override
   Widget build(BuildContext context) {
-
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
     return Container(
       margin:EdgeInsets.only(left:20),
       child: Row(
@@ -23,7 +20,6 @@ class GroupModel extends StatelessWidget {
               Container(
                 width: width*0.1,
                 child: Stack(
-                  overflow: Overflow.visible,
                   children: [
                     Positioned(
                       top: 0,

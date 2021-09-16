@@ -1,4 +1,3 @@
-import 'package:facebook_clone/Components/Constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -8,8 +7,6 @@ class ContactModel extends StatelessWidget {
   final String name;
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
     return Container(
       margin:EdgeInsets.all(10),
       child: Row(
