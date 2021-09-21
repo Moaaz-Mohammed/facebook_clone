@@ -1,6 +1,6 @@
 # facebook_clone
 
-an asignment for exceptance of Maadi Company
+Flutter UI for FaceBook
 
 ## Getting Started
 
