@@ -19,8 +19,7 @@ class MobileHome extends StatelessWidget {
 
     return BlocProvider(
         create: (context) => AppCubit()..LoadingPosts(),
-        child: BlocConsumer<AppCubit, AppStates>(
-            listener: (context, state) {},
+        child: BlocBuilder<AppCubit, AppStates>(
             builder: (context, state) {
               return SafeArea(
                 child: DefaultTabController(

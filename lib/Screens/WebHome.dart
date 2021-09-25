@@ -22,8 +22,7 @@ class WebHome extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return BlocProvider(
       create: (context) => AppCubit()..LoadingPosts(),
-      child: BlocConsumer<AppCubit, AppStates>(
-        listener: (context, state) {},
+      child: BlocBuilder<AppCubit, AppStates>(
         builder: (context, state) {
           return SafeArea(
             child: Scaffold(
@@ -481,8 +480,7 @@ class WebHome extends StatelessWidget {
                                         ? Center(
                                             child: Container(
                                                 width: width * 0.6,
-                                                child:
-                                                    LinearProgressIndicator()))
+                                                child: LinearProgressIndicator()))
                                         : Column(
                                             children: [
                                               WebPostModel(
