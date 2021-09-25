@@ -6,12 +6,8 @@ import 'package:facebook_clone/MobileHomeWidgets/StatusBar.dart';
 import 'package:facebook_clone/MobileHomeWidgets/Stories.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../Components/Constants.dart';
-import '../Models/CreateStoryModel.dart';
-import '../Models/PhonePostModel.dart';
-import '../Models/StoryModel.dart';
 
 class MobileHome extends StatelessWidget {
   const MobileHome({Key? key}) : super(key: key);
