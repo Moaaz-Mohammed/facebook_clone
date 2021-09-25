@@ -19,7 +19,6 @@ class MobileHome extends StatelessWidget {
   @override
   BlocProvider<AppCubit> build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-
     return BlocProvider(
         create: (context) => AppCubit()..LoadingPosts(),
         child: BlocBuilder<AppCubit, AppStates>(
@@ -82,7 +81,8 @@ class MobileHome extends StatelessWidget {
                       children: [
                         SingleChildScrollView(
                           child: Column(
-                            children: [
+                            children:
+                            [
                               // Status bar
                               StatusBar(),
                               //Live - Photos - Room  | Row
@@ -97,18 +97,14 @@ class MobileHome extends StatelessWidget {
                                     ])
                                   : Posts(),
                             ],
-                          ),
-                        ),
+                          ),),
                         Center(child: Text('')),
                         Center(child: Text('')),
                         Center(child: Text('')),
                         Center(child: Text('')),
                         Center(child: Text('')),
                       ],
-                    ),
-                  ),
-                ),
-              );
+                    ),),),);
             }));
   }
 }
