@@ -1,12 +1,9 @@
 import 'package:facebook_clone/Components/Cubit/Cubit.dart';
 import 'package:facebook_clone/Components/Cubit/States.dart';
+import 'package:facebook_clone/WebHomeWidgets/CenterArea.dart';
 import 'package:facebook_clone/WebHomeWidgets/HeadBar.dart';
 import 'package:facebook_clone/WebHomeWidgets/LeftSide.dart';
-import 'package:facebook_clone/WebHomeWidgets/Posts.dart';
 import 'package:facebook_clone/WebHomeWidgets/RightSide.dart';
-import 'package:facebook_clone/WebHomeWidgets/Rooms.dart';
-import 'package:facebook_clone/WebHomeWidgets/StatusBar.dart';
-import 'package:facebook_clone/WebHomeWidgets/Stories.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -43,31 +40,7 @@ class WebHome extends StatelessWidget {
                             // Left Side
                             LeftSide(),
                             // Center
-                            Container(
-                              width: width * 0.6,
-                              height: height,
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    //Stories
-                                    Stories(),
-                                    // Status bar
-                                    StatusBar(),
-                                    // Rooms
-                                    Rooms(),
-                                    //Posts
-                                    AppCubit.get(context).isLoaded
-                                        ? Center(
-                                            child: Container(
-                                                width: width * 0.6,
-                                                child: LinearProgressIndicator()))
-                                        : Posts(),
-                                  ],
-                                ),
-                              ),
-                            ),
+                            CenterArea(),
                             // Right Side
                             RightSide(),
                           ],
