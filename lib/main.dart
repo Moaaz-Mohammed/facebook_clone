@@ -8,30 +8,27 @@ import 'Screens/WebHome.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return  BlocProvider(
-    create: (context) => AppCubit()..LoadingPosts(),
-    child: BlocConsumer<AppCubit, AppStates>(
-    listener: (context, state) {},
-    builder: (context, state) {
-      return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: ScreenTypeLayout(
-          breakpoints: ScreenBreakpoints(
-              desktop: 1001, tablet: 801, watch: 200),
-          mobile: MobileHome(),
-          desktop: WebHome(),
-        ),
-      );
-    },
+    return BlocProvider(
+      create: (context) => AppCubit()..LoadingPosts(),
+      child: BlocBuilder<AppCubit, AppStates>(
+        builder: (context, state) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: ScreenTypeLayout(
+              breakpoints:
+                  ScreenBreakpoints(desktop: 1001, tablet: 801, watch: 200),
+              mobile: MobileHome(),
+              desktop: WebHome(),
+            ),
+          );
+        },
       ),
     );
   }

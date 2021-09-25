@@ -16,8 +16,7 @@ class Stories extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
-          CreateStoryModel(
-              backgroundImg: Constants.girlImg),
+          CreateStoryModel(backgroundImg: Constants.girlImg),
           StoryCardModel(
             backgroundImg: Constants.girlImg,
             profileImg: Constants.girlImg,
