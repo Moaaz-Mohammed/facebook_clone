@@ -1,4 +1,4 @@
-import 'package:facebook_clone/Components/Constants.dart';
+import 'package:facebook_clone/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 class HeadBar extends StatelessWidget {
@@ -8,24 +8,21 @@ class HeadBar extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Container(
-      color: Constants.home_bg_color,
+      color: Constants.homeBackgroundColor,
       height: 55,
       child: Row(
         children: [
           Row(
             children: [
               Container(
-                  margin: EdgeInsets.only(left: 15),
-                  child: Image.asset(
-                      Constants.facebooklogo,
-                      height: 40)),
+                  margin: const EdgeInsets.only(left: 15),
+                  child: Image.asset(Constants.facebooklogo, height: 40)),
               Container(
-                  margin: EdgeInsets.only(left: 10),
+                  margin: const EdgeInsets.only(left: 10),
                   height: 40,
                   width: width * 0.17,
                   decoration: BoxDecoration(
-                    borderRadius:
-                    BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(30),
                     color: Colors.grey[200],
                   ),
                   child: TextFormField(
@@ -42,9 +39,8 @@ class HeadBar extends StatelessWidget {
           ),
           Center(
             child: Container(
-                margin: EdgeInsets.only(
-                    right: width * 0.05,
-                    left: width * 0.05),
+                margin:
+                    EdgeInsets.only(right: width * 0.05, left: width * 0.05),
                 width: width * 0.5,
                 child: DefaultTabController(
                   initialIndex: 0,
@@ -54,21 +50,21 @@ class HeadBar extends StatelessWidget {
                       backgroundColor: Colors.white,
                       elevation: 0,
                       toolbarHeight: 80,
-                      bottom: TabBar(
-                          indicatorWeight: 3,
-                          unselectedLabelColor:
-                          Colors.grey,
-                          tabs: [
-                            Icon(
-                              Icons.home,
-                              color: Colors.blue,
-                              size: 30,
-                            ),
-                            Icon(Icons.flag_outlined),
-                            Icon(Icons.video_collection),
-                            Icon(Icons.shopping_bag),
-                            Icon(Icons.group_outlined)
-                          ]),
+                      bottom: const TabBar(
+                        indicatorWeight: 3,
+                        unselectedLabelColor: Colors.grey,
+                        tabs: [
+                          Icon(
+                            Icons.home,
+                            color: Colors.blue,
+                            size: 30,
+                          ),
+                          Icon(Icons.flag_outlined),
+                          Icon(Icons.video_collection),
+                          Icon(Icons.shopping_bag),
+                          Icon(Icons.group_outlined)
+                        ],
+                      ),
                     ),
                   ),
                 )),
@@ -77,7 +73,7 @@ class HeadBar extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: width * 0.012,
-                backgroundImage: AssetImage(
+                backgroundImage: const AssetImage(
                   Constants.person4,
                 ),
               ),
@@ -85,8 +81,7 @@ class HeadBar extends StatelessWidget {
               Text(
                 'Moaaz',
                 style: TextStyle(
-                    fontSize: width * 0.012,
-                    fontWeight: FontWeight.bold),
+                    fontSize: width * 0.012, fontWeight: FontWeight.bold),
               ),
               SizedBox(width: width * 0.002),
               CircleAvatar(

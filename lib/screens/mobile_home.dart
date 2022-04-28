@@ -1,13 +1,13 @@
-import 'package:facebook_clone/Components/Cubit/Cubit.dart';
-import 'package:facebook_clone/Components/Cubit/States.dart';
-import 'package:facebook_clone/MobileHomeWidgets/ActionsBar.dart';
-import 'package:facebook_clone/MobileHomeWidgets/Posts.dart';
-import 'package:facebook_clone/MobileHomeWidgets/StatusBar.dart';
-import 'package:facebook_clone/MobileHomeWidgets/Stories.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../Components/Constants.dart';
+
+import '../mobile_home_widgets/actions_bar.dart';
+import '../mobile_home_widgets/posts.dart';
+import '../mobile_home_widgets/status_bar.dart';
+import '../mobile_home_widgets/stories.dart';
+import '../shared/bloc/cubit.dart';
+import '../shared/bloc/states.dart';
+import '../shared/constants.dart';
 
 class MobileHome extends StatelessWidget {
   const MobileHome({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class MobileHome extends StatelessWidget {
   BlocProvider<AppCubit> build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return BlocProvider(
-        create: (context) => AppCubit()..LoadingPosts(),
+        create: (context) => AppCubit()..loadingPosts(),
         child: BlocBuilder<AppCubit, AppStates>(builder: (context, state) {
           return SafeArea(
             child: DefaultTabController(
@@ -57,10 +57,10 @@ class MobileHome extends StatelessWidget {
                             width: 25,
                           )),
                     ),
-                    SizedBox(width: 5),
+                    const SizedBox(width: 5),
                   ],
                   bottom: TabBar(tabs: [
-                    Icon(Icons.home, color: Colors.blue, size: 35),
+                    const Icon(Icons.home, color: Colors.blue, size: 35),
                     Icon(Icons.groups, color: Colors.grey[600], size: 35),
                     // Image.asset(Constants.groupIcon),
                     Image.asset(Constants.watchIcon, color: Colors.grey[600]),
@@ -76,26 +76,26 @@ class MobileHome extends StatelessWidget {
                       child: Column(
                         children: [
                           // Status bar
-                          StatusBar(),
+                          const StatusBar(),
                           //Live - Photos - Room  | Row
-                          ActionsBar(),
+                          const ActionsBar(),
                           //Stories
-                          Stories(),
+                          const Stories(),
                           //Posts
                           AppCubit.get(context).isLoaded
                               ? Column(children: [
                                   SizedBox(height: height * 0.2),
-                                  CircularProgressIndicator()
+                                  const CircularProgressIndicator()
                                 ])
-                              : Posts(),
+                              : const Posts(),
                         ],
                       ),
                     ),
-                    Center(child: Text('')),
-                    Center(child: Text('')),
-                    Center(child: Text('')),
-                    Center(child: Text('')),
-                    Center(child: Text('')),
+                    const Center(child: Text('')),
+                    const Center(child: Text('')),
+                    const Center(child: Text('')),
+                    const Center(child: Text('')),
+                    const Center(child: Text('')),
                   ],
                 ),
               ),

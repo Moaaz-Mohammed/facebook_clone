@@ -1,4 +1,4 @@
-import 'package:facebook_clone/Components/Constants.dart';
+import 'package:facebook_clone/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 class ActionsBar extends StatelessWidget {
@@ -8,12 +8,10 @@ class ActionsBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 70,
-      color: Constants.home_bg_color,
-      padding: const EdgeInsets.only(
-          top: 20, bottom: 10, right: 10, left: 10),
+      color: Constants.homeBackgroundColor,
+      padding: const EdgeInsets.only(top: 20, bottom: 10, right: 10, left: 10),
       child: Row(
-        mainAxisAlignment:
-        MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           InkWell(
               onTap: () {},
@@ -27,15 +25,13 @@ class ActionsBar extends StatelessWidget {
                   const Text(
                     'Live',
                     style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold),
+                        fontSize: 16, fontWeight: FontWeight.bold),
                   )
                 ],
               )),
           const Text(
             '|',
-            style:
-            const TextStyle(color: Colors.grey),
+            style: const TextStyle(color: Colors.grey),
           ),
           InkWell(
               onTap: () {},
@@ -49,8 +45,7 @@ class ActionsBar extends StatelessWidget {
                   const Text(
                     'Photos',
                     style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold),
+                        fontSize: 16, fontWeight: FontWeight.bold),
                   )
                 ],
               )),
@@ -70,9 +65,7 @@ class ActionsBar extends StatelessWidget {
                   SizedBox(width: 5),
                   Text(
                     'Room',
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   )
                 ],
               )),

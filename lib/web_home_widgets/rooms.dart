@@ -1,5 +1,5 @@
-import 'package:facebook_clone/Components/Constants.dart';
-import 'package:facebook_clone/Models/RoomHolderModel.dart';
+import 'package:facebook_clone/models/room_holder_model.dart';
+import 'package:facebook_clone/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 class Rooms extends StatelessWidget {
@@ -9,20 +9,15 @@ class Rooms extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Container(
-      margin:
-      EdgeInsets.only(top: 10, bottom: 10),
+      margin: const EdgeInsets.only(top: 10, bottom: 10),
       width: width * 0.5,
-      padding: const EdgeInsets.only(
-          top: 20,
-          bottom: 10,
-          right: 10,
-          left: 10),
+      padding: const EdgeInsets.only(top: 20, bottom: 10, right: 10, left: 10),
       decoration: BoxDecoration(
-        color: Constants.home_bg_color,
+        color: Constants.homeBackgroundColor,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Stack(children: [
-        Container(
+        SizedBox(
           width: width * 0.5,
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
@@ -40,12 +35,10 @@ class Rooms extends StatelessWidget {
                       border: Border.all(
                         color: Colors.blue,
                       ),
-                      borderRadius:
-                      BorderRadius.circular(
-                          20),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                     child: Row(
-                      children: [
+                      children: const [
                         Icon(
                           Icons.video_call,
                           color: Colors.purple,
@@ -55,53 +48,48 @@ class Rooms extends StatelessWidget {
                           'Create Room',
                           style: TextStyle(
                               fontSize: 16,
-                              fontWeight:
-                              FontWeight
-                                  .bold,
-                              color: Colors
-                                  .purple),
+                              fontWeight: FontWeight.bold,
+                              color: Colors.purple),
                         ),
                       ],
                     ),
                   ),
                 ),
                 SizedBox(width: width * 0.005),
-                RoomHolderModel(
+                const RoomHolderModel(
                   img: Constants.person1,
                 ),
-                RoomHolderModel(
+                const RoomHolderModel(
                   img: Constants.person2,
                 ),
-                RoomHolderModel(
+                const RoomHolderModel(
                   img: Constants.person3,
                 ),
-                RoomHolderModel(
+                const RoomHolderModel(
                   img: Constants.person5,
                 ),
-                RoomHolderModel(
+                const RoomHolderModel(
                   img: Constants.person5,
                 ),
-                RoomHolderModel(
+                const RoomHolderModel(
                   img: Constants.girlImg,
                 ),
-                RoomHolderModel(
+                const RoomHolderModel(
                   img: Constants.person5,
                 ),
-                RoomHolderModel(
+                const RoomHolderModel(
                   img: Constants.person2,
                 ),
               ],
             ),
           ),
         ),
-        Align(
+        const Align(
             alignment: Alignment.centerRight,
             child: CircleAvatar(
               radius: 20,
               backgroundColor: Colors.white,
-              child: Icon(
-                  Icons.arrow_forward_ios,
-                  color: Colors.black),
+              child: Icon(Icons.arrow_forward_ios, color: Colors.black),
             ))
       ]),
     );

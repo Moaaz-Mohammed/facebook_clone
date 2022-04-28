@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import '../Components/Constants.dart';
+
+import '../shared/constants.dart';
 
 class PostModel extends StatelessWidget {
   PostModel({
@@ -27,14 +28,13 @@ class PostModel extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
-
     return Container(
         width: width,
         margin: EdgeInsets.only(top: 10),
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Constants.home_bg_color),
+            color: Constants.homeBackgroundColor),
         child: Column(
           children: [
             // Name - Shared Time
@@ -89,7 +89,7 @@ class PostModel extends StatelessWidget {
             ),
             imgs.length == 1
                 ? Stack(
-              fit: StackFit.passthrough,
+                    fit: StackFit.passthrough,
                     children: imgs,
                   )
                 : imgs.length > 1

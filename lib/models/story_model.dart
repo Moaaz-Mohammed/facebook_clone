@@ -8,15 +8,15 @@ class StoryCardModel extends StatelessWidget {
     required this.backgroundImg,
   }) : super(key: key);
 
-  final name;
-  final profileImg;
-  final backgroundImg;
+  final String name;
+  final String profileImg;
+  final String backgroundImg;
 
   @override
   Widget build(BuildContext context) {
     return Container(
         width: 100,
-        margin: EdgeInsets.all(5),
+        margin: const EdgeInsets.all(5),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
@@ -24,7 +24,7 @@ class StoryCardModel extends StatelessWidget {
               color: Colors.grey.withOpacity(0.5),
               spreadRadius: 1,
               blurRadius: 1,
-              offset: Offset(0, 3), // changes position of shadow
+              offset: const Offset(0, 3), // changes position of shadow
             ),
           ],
         ),
@@ -55,7 +55,7 @@ class StoryCardModel extends StatelessWidget {
                   alignment: Alignment.bottomCenter,
                   child: Text(
                     name,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                         color: Colors.white),

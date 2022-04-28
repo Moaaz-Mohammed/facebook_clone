@@ -1,9 +1,10 @@
-import 'package:facebook_clone/Components/Cubit/Cubit.dart';
-import 'package:facebook_clone/WebHomeWidgets/Posts.dart';
-import 'package:facebook_clone/WebHomeWidgets/Rooms.dart';
-import 'package:facebook_clone/WebHomeWidgets/StatusBar.dart';
-import 'package:facebook_clone/WebHomeWidgets/Stories.dart';
+import 'package:facebook_clone/mobile_home_widgets/status_bar.dart';
+import 'package:facebook_clone/shared/bloc/cubit.dart';
+import 'package:facebook_clone/web_home_widgets/rooms.dart';
 import 'package:flutter/material.dart';
+
+import '../mobile_home_widgets/posts.dart';
+import '../mobile_home_widgets/stories.dart';
 
 class CenterArea extends StatelessWidget {
   const CenterArea({Key? key}) : super(key: key);
@@ -11,7 +12,7 @@ class CenterArea extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return Container(
+    return SizedBox(
       width: width * 0.6,
       height: height,
       child: SingleChildScrollView(
@@ -20,18 +21,18 @@ class CenterArea extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             //Stories
-            Stories(),
+            const Stories(),
             // Status bar
-            StatusBar(),
+            const StatusBar(),
             // Rooms
-            Rooms(),
+            const Rooms(),
             //Posts
             AppCubit.get(context).isLoaded
                 ? Center(
-                child: Container(
-                    width: width * 0.6,
-                    child: LinearProgressIndicator()))
-                : Posts(),
+                    child: SizedBox(
+                        width: width * 0.6,
+                        child: const LinearProgressIndicator()))
+                : const Posts(),
           ],
         ),
       ),

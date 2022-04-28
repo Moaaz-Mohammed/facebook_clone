@@ -1,6 +1,6 @@
-import 'package:facebook_clone/Components/Constants.dart';
-import 'package:facebook_clone/Models/CreateStoryModel.dart';
-import 'package:facebook_clone/Models/StoryModel.dart';
+import 'package:facebook_clone/models/create_story_model.dart';
+import 'package:facebook_clone/models/story_model.dart';
+import 'package:facebook_clone/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 class Stories extends StatelessWidget {
@@ -9,7 +9,7 @@ class Stories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Constants.home_bg_color,
+      color: Constants.homeBackgroundColor,
       height: 250,
       margin: EdgeInsets.only(top: 10),
       padding: const EdgeInsets.all(5),

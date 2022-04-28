@@ -1,4 +1,4 @@
-import 'package:facebook_clone/Components/Constants.dart';
+import 'package:facebook_clone/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 class StatusBar extends StatelessWidget {
@@ -8,16 +8,11 @@ class StatusBar extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Container(
-      margin:
-      EdgeInsets.only(top: 10, bottom: 10),
+      margin: const EdgeInsets.only(top: 10, bottom: 10),
       width: width * 0.5,
-      padding: const EdgeInsets.only(
-          top: 20,
-          bottom: 10,
-          right: 10,
-          left: 10),
+      padding: const EdgeInsets.only(top: 20, bottom: 10, right: 10, left: 10),
       decoration: BoxDecoration(
-        color: Constants.home_bg_color,
+        color: Constants.homeBackgroundColor,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
@@ -27,11 +22,8 @@ class StatusBar extends StatelessWidget {
             children: [
               const CircleAvatar(
                 radius: 25,
-                backgroundColor:
-                Colors.transparent,
-                backgroundImage:
-                AssetImage(
-                    Constants.girlImg),
+                backgroundColor: Colors.transparent,
+                backgroundImage: AssetImage(Constants.girlImg),
               ),
               const SizedBox(width: 10),
               InkWell(
@@ -40,65 +32,49 @@ class StatusBar extends StatelessWidget {
                   width: width * 0.4,
                   height: 50,
                   decoration: BoxDecoration(
-                      borderRadius:
-                      BorderRadius.circular(
-                          40),
-                      color: Constants
-                          .home_bg_color,
+                      borderRadius: BorderRadius.circular(40),
+                      color: Constants.homeBackgroundColor,
                       border: Border.all(
                         color: Colors.grey,
                       )),
                   child: Align(
-                      alignment:
-                      Alignment.centerLeft,
+                      alignment: Alignment.centerLeft,
                       child: Container(
-                          padding:
-                          EdgeInsets.only(
-                              left: 20),
-                          child: Text(
+                          padding: const EdgeInsets.only(left: 20),
+                          child: const Text(
                             'What\'s on your mind?',
                             style: TextStyle(
-                                fontSize: 18,
-                                fontWeight:
-                                FontWeight
-                                    .w400),
+                                fontSize: 18, fontWeight: FontWeight.w400),
                           ))),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 10),
-          Divider(
+          const SizedBox(height: 10),
+          const Divider(
             color: Colors.grey,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           // List of Activities
           Row(
-            mainAxisAlignment:
-            MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               InkWell(
                   onTap: () {},
                   child: Row(
                     children: [
-                      Image.asset(
-                          Constants.liveIcon,
-                          height: 20),
+                      Image.asset(Constants.liveIcon, height: 20),
                       const SizedBox(width: 5),
                       const Text(
                         'Live video',
-                        style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight:
-                            FontWeight
-                                .bold),
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
                       )
                     ],
                   )),
               const Text(
                 '|',
-                style: const TextStyle(
-                    color: Colors.grey),
+                style: TextStyle(color: Colors.grey),
               ),
               InkWell(
                   onTap: () {},
@@ -111,26 +87,21 @@ class StatusBar extends StatelessWidget {
                       const SizedBox(width: 5),
                       const Text(
                         'Photo / Video',
-                        style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight:
-                            FontWeight
-                                .bold),
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
                       )
                     ],
                   )),
               const Text(
                 '|',
-                style: TextStyle(
-                    color: Colors.grey),
+                style: TextStyle(color: Colors.grey),
               ),
               InkWell(
                   onTap: () {},
                   child: Row(
                     children: const [
                       Icon(
-                        Icons
-                            .emoji_emotions_outlined,
+                        Icons.emoji_emotions_outlined,
                         color: Colors.yellow,
                         size: 30,
                       ),
@@ -138,10 +109,7 @@ class StatusBar extends StatelessWidget {
                       Text(
                         'Feeling / Activity',
                         style: TextStyle(
-                            fontSize: 16,
-                            fontWeight:
-                            FontWeight
-                                .bold),
+                            fontSize: 16, fontWeight: FontWeight.bold),
                       )
                     ],
                   )),

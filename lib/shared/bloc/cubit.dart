@@ -1,7 +1,8 @@
 import 'dart:async';
-import 'package:bloc/bloc.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'States.dart';
+
+import 'states.dart';
 
 class AppCubit extends Cubit<AppStates> {
   AppCubit() : super(AppInitialState());
@@ -10,12 +11,11 @@ class AppCubit extends Cubit<AppStates> {
 
   bool isLoaded = true;
 
-  void LoadingPosts() {
-    Future.delayed(Duration(seconds: 2),(){
-      if(isLoaded = false)
-        {
-          emit(LoadingPostsState());
-        }
+  void loadingPosts() {
+    Future.delayed(const Duration(seconds: 2), () {
+      if (isLoaded = false) {
+        emit(LoadingPostsState());
+      }
       emit(PostsLoadedState());
     });
   }

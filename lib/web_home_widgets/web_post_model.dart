@@ -1,9 +1,10 @@
 import 'package:carousel_pro_nullsafety/carousel_pro_nullsafety.dart';
 import 'package:flutter/material.dart';
-import '../Components/Constants.dart';
+
+import '../shared/constants.dart';
 
 class WebPostModel extends StatelessWidget {
-  WebPostModel({
+  const WebPostModel({
     Key? key,
     required this.name,
     required this.profileImg,
@@ -27,11 +28,11 @@ class WebPostModel extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Container(
         width: width * 0.5,
-        margin: EdgeInsets.only(top: 10),
-        padding: EdgeInsets.all(10),
+        margin: const EdgeInsets.only(top: 10),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Constants.home_bg_color),
+            color: Constants.homeBackgroundColor),
         child: Column(
           children: [
             // Name - Shared Time
@@ -40,42 +41,44 @@ class WebPostModel extends StatelessWidget {
                 radius: 25,
                 backgroundImage: AssetImage(profileImg),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     name,
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 3),
+                  const SizedBox(height: 3),
                   Row(
                     children: [
                       Text(
                         '$time ago',
-                        style: TextStyle(fontSize: 12, color: Colors.grey),
+                        style:
+                            const TextStyle(fontSize: 12, color: Colors.grey),
                       ),
-                      SizedBox(width: 5),
-                      Text(
+                      const SizedBox(width: 5),
+                      const Text(
                         '·',
                         style: TextStyle(fontSize: 20, color: Colors.grey),
                       ),
-                      SizedBox(width: 5),
+                      const SizedBox(width: 5),
                       Icon(icon, color: Colors.grey, size: 20)
                     ],
                   ),
                 ],
               ),
             ]),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   text,
-                  style: TextStyle(fontSize: 15),
+                  style: const TextStyle(fontSize: 15),
                   textAlign: TextAlign.left,
                 )),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             // عشان لما يكون فيه صورة واحده بس تكون عبارة عن صورة مش Carousel و لما يكون مفيش خالص يكتب الـ Text بس و يكون فيه امكانيه انه يضيف اكتر من صورة في البوست الواحد على شكل Carousel
@@ -87,8 +90,8 @@ class WebPostModel extends StatelessWidget {
                     ? SizedBox(
                         height: 300,
                         child: Carousel(
-                          autoplayDuration: Duration(seconds:5),
-                          animationDuration: Duration(seconds:5),
+                          autoplayDuration: const Duration(seconds: 5),
+                          animationDuration: const Duration(seconds: 5),
                           images: imgs,
                           dotSpacing: 20.0,
                           dotSize: 5,
@@ -99,8 +102,8 @@ class WebPostModel extends StatelessWidget {
                           borderRadius: true,
                         ),
                       )
-                    : Text(''),
-            SizedBox(height: 10),
+                    : const Text(''),
+            const SizedBox(height: 10),
 
             // Reacts and Number of Comments
             Row(
@@ -126,15 +129,15 @@ class WebPostModel extends StatelessWidget {
                   children: [
                     Text(
                       '$commentsNum comments',
-                      style: TextStyle(fontSize: 16, color: Colors.grey),
+                      style: const TextStyle(fontSize: 16, color: Colors.grey),
                     ),
                   ],
                 )
               ],
             ),
-            SizedBox(height: 5),
-            Divider(),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
+            const Divider(),
+            const SizedBox(height: 5),
             // React on the post
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -147,8 +150,8 @@ class WebPostModel extends StatelessWidget {
                         Constants.likeIcon,
                         width: 20,
                       ),
-                      SizedBox(width: 5),
-                      Text(
+                      const SizedBox(width: 5),
+                      const Text(
                         'Like',
                         style: TextStyle(fontSize: 14),
                       )
@@ -163,8 +166,8 @@ class WebPostModel extends StatelessWidget {
                         Constants.commentIcon,
                         width: 25,
                       ),
-                      SizedBox(width: 5),
-                      Text(
+                      const SizedBox(width: 5),
+                      const Text(
                         'Comment',
                         style: TextStyle(fontSize: 14),
                       )
@@ -179,8 +182,8 @@ class WebPostModel extends StatelessWidget {
                         Constants.shareIcon,
                         width: 25,
                       ),
-                      SizedBox(width: 5),
-                      Text(
+                      const SizedBox(width: 5),
+                      const Text(
                         'Share',
                         style: TextStyle(fontSize: 14),
                       )
